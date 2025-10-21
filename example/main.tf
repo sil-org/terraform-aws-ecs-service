@@ -1,13 +1,13 @@
 
 module "this" {
-  source  = "silinternational/module_name/aws"
+  source  = "sil-org/module_name/aws"
   version = ">= 0.1.0"
 
   variable_name = "a variable value"
 }
 
 module "ecsservice" {
-  source  = "silinternational/ecs-service/aws"
+  source  = "sil-org/ecs-service/aws"
   version = ">= 0.3.0"
 
   cluster_id         = module.ecscluster.ecs_cluster_id
