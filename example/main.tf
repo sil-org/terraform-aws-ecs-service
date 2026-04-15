@@ -1,11 +1,3 @@
-
-module "this" {
-  source  = "sil-org/module_name/aws"
-  version = ">= 0.1.0"
-
-  variable_name = "a variable value"
-}
-
 module "ecsservice" {
   source  = "sil-org/ecs-service/aws"
   version = ">= 0.3.0"
