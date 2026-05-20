@@ -113,6 +113,18 @@ variable "deployment_minimum_healthy_percent" {
   default     = 50
 }
 
+variable "memory" {
+  description = "Task-level memory limit in MB. Required for cgroup v2 (AL2023) to properly scope memory per task."
+  type        = number
+  default     = null
+}
+
+variable "cpu" {
+  description = "Task-level CPU reservation in CPU units (1 vCPU = 1024 units). Optional for EC2."
+  type        = number
+  default     = null
+}
+
 variable "ordered_placement_strategy" {
   description = "Service level strategy rules that are taken into consideration during task placement."
   type = list(object({
