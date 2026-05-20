@@ -114,7 +114,13 @@ variable "deployment_minimum_healthy_percent" {
 }
 
 variable "memory" {
-  description = "Task-level memory limit in MB. Required for cgroup v2 (AL2023) to properly scope memory per task. Set to the sum of all container hard memory limits in the task."
+  description = "Task-level memory limit in MB. Required for cgroup v2 (AL2023) to properly scope memory per task."
+  type        = number
+  default     = null
+}
+
+variable "cpu" {
+  description = "Task-level CPU reservation in CPU units (1 vCPU = 1024 units). Optional for EC2."
   type        = number
   default     = null
 }
