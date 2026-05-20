@@ -15,6 +15,7 @@ resource "aws_ecs_task_definition" "td" {
   task_role_arn         = var.task_role_arn
   execution_role_arn    = var.execution_role_arn
   network_mode          = var.network_mode
+  memory                = var.memory
 
   dynamic "volume" {
     for_each = var.volumes
